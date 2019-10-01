@@ -24,6 +24,32 @@ class singleNode{
   }
 }
 
+const findLargestChild = (yourNode) => {
+  let largest = yourNode.value;
+  if (yourNode.left != null) {
+    if (yourNode.left.value > largest) {
+      largest = yourNode.left.value;
+    }
+  }
+  if (yourNode.right != null) {
+    if (yourNode.right.value > largest) {
+      largest = yourNode.right.value;
+    }
+  }
+  if (yourNode.left != null) {
+    if (findLargestChild(yourNode.left) > largest) {
+      largest = findLargestChild(yourNode.left);
+    }
+  }
+  if (yourNode.right != null) {
+    if (findLargestChild(yourNode.right) > largest) {
+      largest = findLargestChild(yourNode.right);
+    }
+  }
+  console.log("now = ", yourNode.value, ", largest = ", largest)
+  return largest
+}
+
 let root = new singleNode('a')
 let node2 = new singleNode('b')
 let node3 = new singleNode('c')
