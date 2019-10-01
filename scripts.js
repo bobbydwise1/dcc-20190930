@@ -59,6 +59,18 @@ root.addLeft(node2)
 root.addRight(node3)
 node2.addLeft(node4)
 console.log(root)
+console.log(findLargestChild(root))
+
+let node5 = new singleNode('e')
+let node6 = new singleNode('f')
+let node7 = new singleNode('g')
+
+node2.addRight(node5)
+node4.addLeft(node6)
+node5.addRight(node7)
+console.log(root)
+console.log(findLargestChild(root))
+
 
 $(document).ready(function() {
   $('#form-1').submit(function(){
